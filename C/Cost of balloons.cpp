@@ -40,7 +40,6 @@ int main()
             }
         }
         printf("%d\n",lol);
-       
     }
     return 0;
 }
