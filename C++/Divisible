@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long int n,i,a,b[100007],dig,l=0;
+    scanf("%lld",&n);
+    a=n/2;
+    for(i=0;i<a;i++)
+    {
+        scanf("%lld",&b[i]);
+        dig=trunc(log10(b[i]));
+        b[i]=(int)(b[i]/pow(10,dig));//1st digit
+    }
+    for(i=a;i<n;i++)
+    {
+        scanf("%lld",&b[i]);
+        b[i]=b[i]%10;//last digit
+    }
+    for(i=0;i<n;i++)
+    {
+        l=l+b[i]*pow(10,n-i-1);//making the number
+    }
+    if(l%11==0)
+    {
+        printf("OUI");
+    }
+    else
+    {
+        printf("NON");
+    }
+    return 0;
+}
